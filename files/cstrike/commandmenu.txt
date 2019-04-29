@@ -1,0 +1,564 @@
+// Command Menu by hXR16F
+//
+// Notes:	To use 101xD hack replace "asd_" with your prefix.
+//		Fake lag only works with protector - block "rate" command.
+//		Dexa's commandmenu is included in Counter Strike from CSSetti.pl.
+//		Don't forget to define your nick in commandmenu/exploits/antiban.cfg.
+
+"1" ".: Menu by hXR16F" "echo | Commandmenu by hXR16F"
+"2" "[1] Client Options"
+{
+	"1" ".: Center ID"
+	{
+		"1" ".: ON" "hud_centerid 1"
+		"2" ".: OFF" "hud_centerid 0"
+	}
+	"2" ".: Config"
+	{
+		"1" ".: Reset CFG" "unbindall;exec config.cfg;exec userconfig.cfg"
+		"2" ".: ESL CFG"
+		{
+			"1" ".: 5on5" "exec commandmenu/config/esl/5on5.cfg"
+			"2" ".: 3on3" "exec commandmenu/config/esl/3on3.cfg"
+			"3" ".: 2on2" "exec commandmenu/config/esl/2on2.cfg"
+			"4" ".: 1on1" "exec commandmenu/config/esl/1on1.cfg"
+		}
+		"3" ".: Players CFG"
+		{
+			"1" ".: Edward" "exec commandmenu/config/player/edward.cfg"
+			"2" ".: f0rest" "exec commandmenu/config/player/f0rest.cfg"
+			"3" ".: get_right" "exec commandmenu/config/player/get_right.cfg"
+			"4" ".: hXR16F" "exec commandmenu/config/player/hXR16F.cfg"
+			"5" ".: kuben" "exec commandmenu/config/player/kuben.cfg"
+			"6" ".: neo" "exec commandmenu/config/player/neo.cfg"
+			"7" ".: pasha" "exec commandmenu/config/player/pasha.cfg"
+			"8" ".: taz" "exec commandmenu/config/player/taz.cfg"
+			"9" ".: xizt" "exec commandmenu/config/player/xizt.cfg"
+		}
+		"4" ".: Surf CFG"
+		{
+			"1" ".: Easy" "exec commandmenu/config/surf/surf_easy.cfg"
+			"2" ".: Medium" "exec commandmenu/config/surf/surf_medium.cfg"
+			"3" ".: Hard" "exec commandmenu/config/surf/surf_hard/cfg"
+			"4" ".: Fun" "exec commandmenu/config/surf/surf_fun.cfg"
+		}
+	}
+	"3" ".: Crosshair"
+	{
+		"1" ".: Color"
+		{
+			"1" ".: Black" "exec commandmenu/crosshair/black.cfg"
+			"2" ".: Red" "exec commandmenu/crosshair/red.cfg"
+			"3" ".: Green" "exec commandmenu/crosshair/green.cfg"
+			"4" ".: Blue" "exec commandmenu/crosshair/blue.cfg"
+			"5" ".: White" "exec commandmenu/crosshair/white.cfg"
+			"6" ".: Yellow" "exec commandmenu/crosshair/yellow.cfg"
+		}
+		"2" ".: Dynamic"
+		{
+			"1" ".: ON" "cl_dynamiccrosshair 1"
+			"2" ".: OFF" "cl_dynamiccrosshair 0"
+		}
+		"3" ".: Size"
+		{
+			"1" ".: Large" "cl_crosshair_size large"
+			"2" ".: Medium" "cl_crosshair_size medium"
+			"3" ".: Small" "cl_crosshair_size small"
+			"4" ".: Tiny" "cl_dynamiccrosshair 1;cl_crosshair_size small;+duck;wait;wait;wait;wait;wait;cl_dynamiccrosshair 0;wait;-duck"
+			"5" ".: Auto" "cl_crosshair_size auto"
+		}
+	}
+	"4" ".: FPS Limit"
+	{
+		"1" ">"
+		{
+			"1" ".: 100" "fps_max 100"
+			"2" ".: 120" "fps_max 120"
+			"3" ".: 144" "fps_max 144"
+			"4" ".: 200" "fps_max 200"
+			"5" ".: 240" "fps_max 240"
+			"6" ".: 500" "fps_max 500"
+			"7" ".: 1000" "fps_max 1000"
+		}
+		"2" ".: 1" "fps_max 1"
+		"3" ".: 5" "fps_max 5"
+		"4" ".: 10" "fps_max 10"
+		"5" ".: 20" "fps_max 20"
+		"6" ".: 24" "fps_max 24"
+		"7" ".: 30" "fps_max 30"
+		"8" ".: 50" "fps_max 50"
+		"9" ".: 60" "fps_max 60"
+		"10" ".: 75" "fps_max 75"
+	}
+	"5" ".: Graphics"
+	{
+		"1" ".: High Quality" "exec commandmenu/graphics/high_quality.cfg"
+		"2" ".: Medium Quality" "exec commandmenu/graphics/medium_quality.cfg"
+		"3" ".: Low Quality" "exec commandmenu/graphics/low_quality.cfg"
+	}
+	"6" ".: Hand"
+	{
+		"1" ".: Right Hand" "cl_righthand 1"
+		"2" ".: Left Hand" "cl_righthand 0"
+	}
+	"7" ".: HUD Fastswitch"
+	{
+		"1" ".: Enable" "hud_fastswitch 1"
+		"2" ".: Disable" "hud_fastswitch 0"
+	}
+	"8" ".: Interpolation"
+	{
+		"1" ".: 0.01" "ex_interp 0.01"
+		"2" ".: 0.02" "ex_interp 0.02"
+		"3" ".: 0.03" "ex_interp 0.03"
+		"4" ".: 0.04" "ex_interp 0.04"
+		"5" ".: 0.05" "ex_interp 0.05"
+		"6" ".: 0.1" "ex_interp 0.1"
+	}
+	"9" ".: Knife Left Hand"
+	{
+		"1" ".: ON" "slot 1;cl_lw 0;lastinv"
+		"2" ".: OFF" "slot 1;cl_lw 1;lastinv"
+	}
+	"10" ".: Mouse Filtering"
+	{
+		"1" ".: ON" "m_filter 1"
+		"2" ".: OFF" "m_filter 0"
+	}
+	"11" ".: VGUI"
+	{
+		"1" ".: ON" "setinfo vgui_menus 1;setinfo _vgui_menus 1"
+		"2" ".: OFF" "setinfo vgui_menus 0;setinfo _vgui_menus 0"
+	}
+	"12" ".: 'Wait' Aliases" "exec commandmenu/scripts/wait_aliases.cfg"
+}
+"3" "[2] Server Options"
+{
+	"1" ".: Bots"
+	{
+		"1" ".: Add Bots"
+		{
+			"1" ".: Add CT Bots"
+			{
+				"1" ".: 1 Bot" "bot_add_ct"
+				"2" ".: 2 Bots" "bot_add_ct; bot_add_ct"
+				"3" ".: 3 Bots" "bot_add_ct; bot_add_ct; bot_add_ct"
+				"4" ".: 4 Bots" "bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct"
+				"5" ".: 5 Bots" "bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct"
+				"6" ".: 6 Bots" "bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct"
+				"7" ".: 7 Bots" "bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct"
+				"8" ".: 8 Bots" "bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct; bot_add_ct"
+			}
+			"2" ".: Add T Bots"
+			{
+				"1" ".: 1 Bot" "bot_add_t"
+				"2" ".: 2 Bots" "bot_add_t; bot_add_t"
+				"3" ".: 3 Bots" "bot_add_t; bot_add_t; bot_add_t"
+				"4" ".: 4 Bots" "bot_add_t; bot_add_t; bot_add_t; bot_add_t"
+				"5" ".: 5 Bots" "bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t"
+				"6" ".: 6 Bots" "bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t"
+				"7" ".: 7 Bots" "bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t"
+				"8" ".: 8 Bots" "bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t; bot_add_t"
+			}
+		}
+		"2" ".: Bots Difficulty"
+		{
+			"1" ".: Easy" "bot_difficulty 0"
+			"2" ".: Normal" "bot_difficulty 1"
+			"3" ".: Hard" "bot_difficulty 2"
+			"4" ".: Expert" "bot_difficulty 3"
+		}
+		"3" ".: Kick Bots" "bot_kick"
+		"4" ".: Kill Bots" "bot_kill"
+		"5" ".: Stop Bots"
+		{
+			"1" ".: ON" "bot_stop 1"
+			"2" ".: OFF" "bot_stop 0"
+		}
+	}
+	"2" ".: Change Map"
+	{
+		"1" ".: AIM_MAPS"
+		{
+			"1" ".: aim_00" "changelevel aim_00"
+			"2" ".: aim_ak" "changelevel aim_ak"
+			"3" ".: aim_ak_colt" "changelevel aim_ak_colt"
+			"4" ".: aim_b0n0" "changelevel aim_b0n0"
+			"5" ".: aim_crazyjump" "changelevel aim_crazyjump"
+			"6" ".: aim_deagle5" "changelevel aim_deagle5"
+			"7" ".: aim_famas_x" "changelevel aim_famas_x"
+			"8" ".: aim_headshot" "changelevel aim_headshot"
+			"9" ".: aim_paper" "changelevel aim_apper"
+			"10" ".: aim_usp" "changelevel aim_usp"
+			"11" ".: aim_respect" "changelevel aim_respect"
+		}
+		"2" ".: DE_MAPS" 
+		{
+			"1" ".: de_dust" "changelevel de_dust"
+			"2" ".: de_dust2" "changelevel de_dust2"
+			"3" ".: de_nuke" "changelevel de_nuke"
+			"4" ".: de_aztec" "changelevel de_aztec"
+			"5" ".: de_inferno" "changelevel de_inferno"
+			"6" ".: de_train" "changelevel de_train"
+			"7" ".: de_cbble" "changelevel de_cbble"
+			"8" ".: de_prodigy" "changelevel de_prodigy"
+			"9" ".: de_airstrip" "changelevel de_airstrip"
+			"10" ".: de_kabul" "changelevel de_kabul"
+		}   
+		"3" ".: CS_MAPS"
+		{
+			"1" ".: cs_assault" "changelevel cs_assault"
+			"2" ".: cs_italy" "changelevel cs_italy"
+			"3" ".: cs_militia" "changelevel cs_militia"
+			"4" ".: cs_office" "changelevel cs_office"
+			"5" ".: cs_siege" "changelevel cs_siege"
+			"6" ".: cs_estate" "changelevel cs_estate"
+			"7" ".: cs_backalley" "changelevel cs_backalley"
+			"8" ".: cs_havana" "changelevel cs_havana"
+			"9" ".: cs_747" "changelevel cs_747"
+		}
+	}
+	"3" ".: Commands"
+	{
+		
+		"1" ".: Next Map" "say nextmap"
+		"2" ".: Reset Score" "say /resetscore"
+		"3" ".: Roundsound" "say /roundsound"
+		"4" ".: Show Admins" "say /admins"
+		"5" ".: Time" "say thetime"
+		"6" ".: Time Left" "say timeleft"
+		"7" ".: Top 15" "say /top15"
+		"8" ".: VIP" "say /vip"
+		"9" ".: Vote Next Map" "say rtv"
+	}
+}
+"4" "[3] Scripts"
+{
+	"1" ".: Auto BH" "exec commandmenu/scripts/autobh.cfg"
+	"2" ".: Auto Duck" "bind MWHEELUP +duck; wait; -duck; wait; +duck; wait; -duck; wait; +duck; wait; -duck; wait; +duck; wait; -duck; wait"
+	"3" ".: BH Helper"
+	{
+		"1" ".: Legit" "exec commandmenu/scripts/bh_helper_legit.cfg"
+		"2" ".: Normal" "exec commandmenu/scripts/bh_helper_normal.cfg"
+	}
+	"4" ".: Fake Shot" "exec commandmenu/scripts/fake_shot.cfg"
+	"5" ".: FPS Limit"
+	{
+		"1" ".: Increase Limit" "fps_max 1000;fps_modem 1000"
+		"2" ".: Remove Limit" "developer 1"
+	}
+	"6" ".: Full Bright" "exec commandmenu/scripts/full_bright.cfg"
+	"7" ".: Jump Bug" "exec commandmenu/scripts/jumpbug.cfg"
+	"8" ".: Kz Gravity Switcher"
+	{
+		"1" ".: Legit" "exec commandmenu/scripts/kz_gravity_switcher_legit.cfg"
+		"2" ".: Normal" "exec commandmenu/scripts/kz_gravity_switcher_normal.cfg"
+	}
+	"9" ".: Running Fix" "exec commandmenu/scripts/running_fix.cfg"
+	"10" ".: Spam"
+	{
+		"1" ".: Delay" "exec commandmenu/scripts/wait_aliases.cfg; exec commandmenu/scripts/spam_delay.cfg"
+		"2" ".: Instant" "exec commandmenu/scripts/spam_instant.cfg"
+	}
+}
+"5" "[4] Other"
+{
+	"1" ".: ADs"
+	{
+		"1" ".: ATI"
+		{
+			"1" ".: ON" "exec xms/graph/xms-ati.rc"
+			"2" ".: OFF" "gl_polyoffset 4; retry"
+		}
+		"2" ".: Nvidia"
+		{
+			"1" ".: ON" "exec xms/graph/xms-nvidia.rc"
+			"2" ".: OFF" "gl_polyoffset 0.1; retry"
+		}
+	}
+	"2" ".: Change Team" "chooseteam"
+	"3" ".: Screenshots"
+	{
+		"1" ".: Scoreboard SS" "exec commandmenu/scripts/scoreboard_ss.cfg"
+		"2" ".: Console SS" "hud_draw 0;toggleconsole;wait;wait;wait;snapshot;wait;wait;wait;wait;toggleconsole;hud_draw 1"
+		"3" ".: Normal SS"
+		{
+			"1" ".: With HUD" "exec commandmenu/scripts/screenshot_with_hud.cfg"
+			"2" ".: Without HUD" "-commandmenu;;hud_draw 0;wait;wait;wait;snapshot;wait;wait;wait;wait;hud_draw 1"
+		}
+	}
+	"4" ".: Tweaks"
+	{
+		"1" ">"
+		{
+			"1" ".: Exec All" "exec commandmenu/tweaks/fps_tweaks.cfg;exec commandmenu/tweaks/mouse_tweaks.cfg;exec commandmenu/tweaks/ping_tweaks.cfg"
+		}
+		"2" ".: FPS" "exec commandmenu/tweaks/fps_tweaks.cfg"
+		"3" ".: Mouse" "exec commandmenu/tweaks/mouse_tweaks.cfg"
+		"4" ".: Ping" "exec commandmenu/tweaks/ping_tweaks.cfg"
+	}
+}
+"6" "[5] Hacks"
+{
+	"1" ".: 101xD"
+	{
+		"1" ".: AimBot"
+		{
+			"1" ">"
+			{
+				"1" ".: ON" "asd_aim 1"
+				"2" ".: OFF" "asd_aim 0"
+			}
+			"2" ".: Auto Attack"
+			{
+				"1" ".: ON" "asd_aim_auto_attack 1;asd_aim_auto 1"
+				"2" ".: OFF" "asd_aim_auto_attack 0;asd_aim_auto 1"
+			}
+			"3" ".: FOV"
+			{
+				"1" ".: Legit"
+				{
+					"1" ".: 1" "asd_aim_fov 1"
+					"2" ".: 2" "asd_aim_fov 2"
+					"3" ".: 3" "asd_aim_fov 3"
+					"4" ".: 4" "asd_aim_fov 4"
+					"5" ".: 5" "asd_aim_fov 5"
+				}
+				"2" ".: Rage"
+				{
+					"1" ".: 90" "asd_aim_fov 90"
+					"2" ".: 180" "asd_aim_fov 180"
+					"3" ".: 360" "asd_aim_fov 360"
+				}
+			}
+			"4" ".: Helper"
+			{
+				"1" ".: ON" "asd_aim_help 1"
+				"2" ".: OFF" "asd_aim_help 0"
+			}
+			"5" ".: Mode"
+			{
+				"1" ".: Bone" "asd_aim_mode 3"
+				"2" ".: Hitbox" "asd_aim_mode 2"
+				"3" ".: Origin" "asd_aim_mode 1"
+			}
+			"6" ".: Prediction"
+			{
+				"1" ".: ON" "asd_aim_prediction 1"
+				"2" ".: OFF" "asd_aim_prediction 0"
+			}
+		}
+		"2" ".: Auto BH"
+		{
+			"1" ".: ON" "asd_bhop 1"
+			"2" ".: OFF" "asd_bhop 0"
+		}
+		"3" ".: ESP"
+		{
+			"1" ">"
+			{
+				"1" ".: ON" "asd_esp 1"
+				"2" ".: OFF" "asd_esp 0"
+			}
+			"2" ".: Box"
+			{
+				"1" ">"
+				{
+					"1" ".: ON" "asd_esp_box 1;asd_esp_3dbox 0"
+					"2" ".: OFF" "asd_esp_box 0"
+				}
+				"2" ".: 3D"
+				{
+					"1" ".: ON" "asd_esp_3dbox 1;asd_esp_box 0"
+					"2" ".: OFF" "asd_esp_3dbox 0"
+				}
+				"3" ".: Size"
+				{
+					"1" ".: 1" "asd_esp_box_size 1"
+					"2" ".: 2" "asd_esp_box_size 2"
+					"3" ".: 3" "asd_esp_box_size 3"
+					"4" ".: 4" "asd_esp_box_size 4"
+				}
+			}
+			"3" ".: Distance"
+			{
+				"1" ".: ON" "asd_esp_distance 1"
+				"2" ".: OFF" "asd_esp_distance 0"
+			}
+			"4" ".: Far"
+			{
+				"1" ">"
+				{
+					"1" ".: ON" "asd_esp_far 1"
+					"2" ".: OFF" "asd_esp_far 0"
+				}
+				"2" ".: Smooth"
+				{
+					"1" ".: 0" "asd_esp_far_smooth 0"
+					"2" ".: 1" "asd_esp_far_smooth 1"
+					"3" ".: 2" "asd_esp_far_smooth 2"
+				}
+			}
+			"5" ".: Name"
+			{
+				"1" ".: ON" "asd_esp_name 1"
+				"2" ".: OFF" "asd_esp_name 0"
+			}
+			"6" ".: Weapon"
+			{
+				"1" ".: ON" "asd_esp_weapon 1"
+				"2" ".: OFF" "asd_esp_weapon 0"
+			}
+		}
+		"4" ".: Fullbright"
+		{
+			"1" ".: ON" "asd_fullbright 1"
+			"2" ".: OFF" "asd_fullbright 0"
+		}
+		"5" ".: No..?"
+		{
+			"1" ".: No Flash"
+			{
+				"1" ".: ON" "asd_noflash 1"
+				"2" ".: OFF" "asd_noflash 0"
+			}
+			"2" ".: No Recoil"
+			{
+				"1" ".: ON" "asd_norecoil 1"
+				"2" ".: OFF" "asd_norecoil 0"
+			}
+			"3" ".: No Spread"
+			{
+				"1" ".: ON" "asd_nospread 1"
+				"2" ".: OFF" "asd_nospread 0"
+			}
+		}
+		"6" ".: Radar"
+		{
+			"1" ">"
+			{
+				"1" ".: ON" "asd_radar 1"
+				"2" ".: OFF" "asd_radar 0"
+			}
+			"2" ".: Team"
+			{
+				"1" ".: ON" "asd_radar_team 1"
+				"2" ".: OFF" "asd_radar_team 0"
+			}
+		}
+		"7" ".: WallHack"
+		{
+			"1" ".: ON" "asd_wallhack_xqz 1"
+			"2" ".: OFF" "asd_wallhack_xqz 0"
+		}
+		"8" ".: White Walls"
+		{
+			"1" ".: ON" "asd_whitewalls 1"
+			"2" ".: OFF" "asd_whitewalls 0"
+		}
+	}
+	"2" ".: CSX Guard"
+	{
+		"1" ".: Debug Parser" "csx_debug_parser"
+		"2" ".: SID"
+		{
+			"1" ".: Change To Random" "csx_steamid random"
+			"2" ".: View SID" "csx_steamid current"
+		}
+	}
+	"3" ".: Exploits"
+	{
+		"1" ".: Anti-Ban" "exec commandmenu/exploits/antiban.cfg"
+		"2" ".: Fake Lag"
+		{
+			"1" ".: ON" "rate 1"
+			"2" ".: OFF" "rate 25000"
+		}
+		"3" ".: Kicker"
+		{
+			"1" ".: j e f Strike*" "exec commandmenu/exploits/kick_1.cfg"
+		}
+		"4" ".: Server Crasher"
+		{
+			"1" ".: Hashsign Method" "exec commandmenu/exploits/crash_1.cfg"
+			"2" ".: UnUTF8Chars Method" "exec commandmenu/exploits/crash_2.cfg"
+		}
+	}
+	"4" ".: Other"
+	{
+		"1" ".: Less Recoil" "cl_lw 0; cl_lc 0"
+	}
+	"5" ".: Parse IPs/SIDs" "exec commandmenu/scripts/ip_sid_parser.cfg"
+}
+"7" "[6] Fakes"
+{
+	"1" ".: Dexa"
+	{
+		"1" ">"
+		{
+			"1" ".: Radar"
+			{
+				"1" ".: ON" "say Radar: ENABLED"
+				"2" ".: OFF" "say Radar: DISABLED"
+			}
+			"2" ".: Radar Type"
+			{
+				"1" ".: Translucent" "say Radar Type: OLD"
+				"2" ".: Solid" "say Radar Type: NEW"
+			}
+			"3" ".: Kill All Bot" "say All Bot Killed!"
+			"4" ".: Bot Difficulty"
+			{
+				"1" ".: Easy" "say Bot Difficulty: EASY"
+				"2" ".: Normal" "say Bot Difficulty: NORMAL"
+				"3" ".: Hard" "say Bot Difficulty: HARD"
+				"4" ".: Expert" "say Bot Difficulty: EXPERT"
+			}
+			"5" ".: Show FPS"
+			{	
+				"1" ".: ON" "say FPS Meter: ENABLED"
+				"2" ".: OFF" "say FPS Meter: DISABLED"
+			}
+		}
+		"2" ".: Weapon Hands"
+		{
+			"1" ".: Use Right Models" "say Models: RIGHT"
+			"2" ".: Use Left Models" "say Models: LEFT"
+		}
+		"3" ".: Auto Help"
+		{
+			"1" ".: ON" "say Auto Help: ENABLED"
+			"2" ".: OFF" "say Auto Help: DISABLED"
+		}
+		"4" ".: Buy Menu Type"
+		{
+			"1" ".: VGUI" "say VGUI Menus: ENABLED"
+			"2" ".: Classic Text" "say VGUI Menus: DISABLED"
+		}
+		"5" ".: Friendly Fire"
+		{
+			"1" ".: ON" "say Friendly Fire: ENABLED"
+			"2" ".: OFF" "say Friendly Fire: DISABLED"
+		}
+		"6" ".: Auto Weapon Switch"
+		{
+			"1" ".: ON" "say Auto Weapon Switch: ENABLED"
+			"2" ".: OFF" "say Auto Weapon Switch: DISABLED"
+		}
+		"7" ".: Spriteblend"
+		{
+			"1" ".: ON" "say Spriteblend: ON"
+			"2" ".: OFF" "say Spriteblend: OFF"
+		}
+		"8" ".: Weather Effects"
+		{
+			"1" ".: ON" "say Weather Effects: ENABLED"
+			"2" ".: OFF" "say Weather Effects: DISABLED"
+		}
+	}
+	"2" ".: ILUSYON"
+	{
+		"1" ".: CFG Exploit" "exec commandmenu/scripts/wait_aliases.cfg; exec commandmenu/fakes/ilusyon.cfg"
+	}
+}
+"8" ".: Exit" "-commandmenu"
